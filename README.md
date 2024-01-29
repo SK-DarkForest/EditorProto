@@ -1,0 +1,2 @@
+# EditorProto
+Scratch wannabe
