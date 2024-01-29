@@ -1,0 +1,30 @@
+.App {
+    flex-grow: 1;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+.tab {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    width: 25%;
+    height: 100%;
+}
+
+.tab:hover {
+    background-color: rgb(152, 152, 152);
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.textfield > .unity-base-text-area__label {
+    display: none;
+    visibility: hidden;
+}

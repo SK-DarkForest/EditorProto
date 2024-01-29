@@ -1,0 +1,37 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/PAG/PAG.uss?fileID=7433441132597879392&amp;guid=2f99cbbd53da1ad468001a050d9478f7&amp;type=3#PAG" />
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; align-items: center; justify-content: center;">
+        <ui:VisualElement name="PAG" style="flex-grow: 0.8; width: 80%; height: 80%;">
+            <ui:VisualElement name="Header" style="flex-grow: initial; height: 20%; flex-shrink: 5; background-color: rgb(188, 40, 163); position: absolute; left: 0; top: 0; right: 0; bottom: 80%;">
+                <ui:VisualElement name="Title" style="flex-grow: 0.5; height: auto; justify-content: center; align-items: center; position: relative; left: 0; top: 0; right: 0; bottom: 55px;">
+                    <ui:Label tabindex="-1" text="Grafisches AbhörProgramm" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GAP" style="top: 0;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Tabs" style="flex-grow: 0.5; height: auto; position: absolute; left: 0; bottom: 0; right: 0; top: 50%;">
+                    <ui:Button text="Editor" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Editor" class="tab" style="position: absolute; left: 0; bottom: 0; top: 0; right: 75%;" />
+                    <ui:Button text="Editor" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Editor" class="tab" style="position: absolute; left: 25%; bottom: 0; top: 0; right: 50%;" />
+                    <ui:Button text="Editor" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Editor" class="tab" style="position: absolute; left: 50%; bottom: 0; top: 0; right: 25%;" />
+                    <ui:Button text="Editor" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Editor" class="tab" style="position: absolute; left: 75%; bottom: 0; top: 0; right: 0; padding-top: 10px; padding-right: 12px; padding-bottom: 10px; padding-left: 12px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="App" style="flex-grow: 0.8; left: 0; bottom: 0; right: 0; top: 20%; background-color: rgb(72, 86, 192); position: absolute;">
+                <ui:VisualElement name="Editor" class="App" style="position: absolute; bottom: 0; top: 0; right: 1px; left: -1px;">
+                    <ui:VisualElement name="Scratch" style="flex-grow: 1; position: absolute; left: 0; top: 0; right: 0; bottom: 0;">
+                        <ui:VisualElement name="Elements" style="flex-grow: 1; position: absolute; left: 0; top: 0; bottom: 0; right: 80%; background-color: rgb(188, 40, 163); -unity-background-image-tint-color: rgb(188, 40, 163);" />
+                        <ui:VisualElement name="Code" style="flex-grow: 1; position: absolute; left: 20%; top: 0; bottom: 0; right: 10%; background-color: rgb(204, 59, 59);" />
+                        <ui:VisualElement name="Actions" style="flex-grow: 1; position: absolute; left: 90%; top: 0; right: 0; bottom: 0; background-color: rgb(53, 190, 159);" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="JS" style="flex-grow: 1; position: absolute; left: 0; top: 0; right: 0; bottom: 0;">
+                        <ui:VisualElement name="Code" style="flex-grow: 1; position: absolute; left: 0; top: 0; bottom: 0; right: 10%; background-color: rgb(204, 59, 59);">
+                            <ui:TextField picking-mode="Ignore" value="print(&quot;Start&quot;);" multiline="true" name="startScript" class="textarea" style="position: absolute; left: 0; top: 0; right: 50%; bottom: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+                            <ui:TextField picking-mode="Ignore" value="move(0,0);" multiline="true" name="updateScript" class="textarea" style="position: absolute; left: 50%; top: 0; right: 0; bottom: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="Actions" style="flex-grow: 1; position: absolute; left: 90%; top: 0; right: 0; bottom: 0; background-color: rgb(53, 190, 159);">
+                            <ui:Button text="Update" parse-escape-sequences="true" display-tooltip-when-elided="true" name="update" style="font-size: 5px;" />
+                            <ui:Button text="Scratch" parse-escape-sequences="true" display-tooltip-when-elided="true" name="sratch" style="font-size: 5px;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
