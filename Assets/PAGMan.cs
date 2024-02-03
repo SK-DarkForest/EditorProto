@@ -12,10 +12,10 @@ public class PAGMan : MonoBehaviour
     void Start()
     {
         // Find the Robot GameObject with the name "Robot"
-        VisualElement scratch  = target.rootVisualElement.Q("scratch");
+        VisualElement scratch  = target.rootVisualElement.Q("Scratch");
         if(target!=null){
             Debug.Log("Target");
-            scratch = target.rootVisualElement.Q("scratch");
+            scratch = target.rootVisualElement.Q("Scratch");
             scratch.style.display = DisplayStyle.None;
         }
         this.robotGameObject = GameObject.Find("Robot");
@@ -44,6 +44,7 @@ public class PAGMan : MonoBehaviour
                 }
                 if(toggleEditor != null){
                     toggleEditor.clicked += () => {
+                        
                         scratch.style.display = scratch.style.display == DisplayStyle.Flex ? DisplayStyle.None : DisplayStyle.Flex;
                         code.style.display = scratch.style.display == DisplayStyle.Flex ? DisplayStyle.None : DisplayStyle.Flex;
                     };

@@ -5,6 +5,7 @@ public class TogglePanelVisibility : MonoBehaviour
 {
     public UIDocument targetUIDocument; // Assign the target UIDocument in the Inspector
     public string panelName = "VisualElement"; // Assign the name of the panel in the target UIDocument
+    private VisualElement HoloNote;
 
     void Start()
     {
@@ -23,6 +24,8 @@ public class TogglePanelVisibility : MonoBehaviour
 
         // Set the width of the button
         button.style.width = width;*/
+        HoloNote = GetComponent<UIDocument>().rootVisualElement.Q("HoloNote");
+        HoloNote.style.display = DisplayStyle.None;
         if (targetUIDocument != null)
         {
             // Find the panel in the target UIDocument
@@ -33,7 +36,6 @@ public class TogglePanelVisibility : MonoBehaviour
             {
                 // Assume you have a button in your UXML with the name "toggleButton"
                 Button toggleButton = GetComponent<UIDocument>().rootVisualElement.Q<Button>("myButton");
-
                 // Check if the toggleButton is found
                 if (toggleButton != null)
                 {
@@ -61,6 +63,5 @@ public class TogglePanelVisibility : MonoBehaviour
         }
     }
     private void Update() {
-        Debug.Log(1f / Time.unscaledDeltaTime);
     }
 }

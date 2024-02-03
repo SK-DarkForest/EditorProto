@@ -1,0 +1,1 @@
+I am working on a 2D Unity game in which you collect clues and solve puzzles and I want to have circles on the ground that when you interact with them open up a "Holo Note" which is basically a sticky note. It will have text, images and little programs which I will just store as strings probably. 
