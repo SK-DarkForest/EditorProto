@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Root" style="flex-grow: 1; position: absolute; left: 10%; top: 10%; bottom: 10%; right: 10%; background-color: rgb(188, 139, 139); border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
+        <ui:VisualElement name="Toolbar" style="flex-grow: 1; position: absolute; left: 0; top: 0; right: 0; bottom: 88%; background-color: rgb(77, 52, 195); border-top-left-radius: 20px; border-top-right-radius: 20px;" />
+        <ui:VisualElement name="Items" style="flex-grow: 1; border-bottom-left-radius: 20px; background-color: rgb(197, 42, 151); position: absolute; left: 0; top: 12%; right: 92%; bottom: 0;">
+            <ui:VisualElement name="DragSource" style="flex-grow: 1; background-color: rgba(14, 11, 11, 0.8); border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; position: absolute; width: 50px; height: 50px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
