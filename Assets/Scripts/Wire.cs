@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 public class Wire : MonoBehaviour
 {
     private VisualElement dragSource;
-    private Vector2 offset = new Vector2(0,0);
+    private Vector2 offset = Vector2.zero;
     private bool dragging = false;
 
     private void Start()
@@ -19,51 +19,44 @@ public class Wire : MonoBehaviour
     }
 
     private void OnMouseDown(MouseDownEvent evt)
-{
-    if (evt.button == (int)MouseButton.LeftMouse)
     {
-        // Convert mouse position from global to local coordinates relative to the drag source
-        Vector2 localMousePosition = dragSource.WorldToLocal(evt.mousePosition);
+        if (evt.button == (int)MouseButton.LeftMouse)
+        {
+            // Calculate the offset between the mouse position and the drag source position
+            Vector2 mousePositionRelativeToElement = evt.localMousePosition;
+            offset = dragSource.WorldToLocal(mousePositionRelativeToElement) - dragSource.layout.center;
 
-        // Calculate the offset between the local mouse position and the position of the drag source
-        offset = localMousePosition - dragSource.layout.center;
+            // Mark dragging as true
+            dragging = true;
 
-        // Mark dragging as true
-        dragging = true;
+            // Prevent event propagation and default behavior
+            evt.StopPropagation();
+            evt.PreventDefault();
+        }
+    }
+
+    private void OnMouseMove(MouseMoveEvent evt)
+    {
+        if (!dragging) return;
+
+        // Update the position of the drag source based on the mouse position and offset
+        Vector2 localMousePosition = evt.mousePosition;
+        Vector2 newPosition = dragSource.WorldToLocal(localMousePosition) - offset;
+        dragSource.style.left = newPosition.x;
+        dragSource.style.top = newPosition.y;
 
         // Prevent event propagation and default behavior
         evt.StopPropagation();
         evt.PreventDefault();
     }
-}
 
-private void OnMouseMove(MouseMoveEvent evt)
-{
-    if (!dragging) return;
+    private void OnMouseUp(MouseUpEvent evt)
+    {
+        // Mark dragging as false
+        dragging = false;
 
-    // Convert mouse position from global to local coordinates relative to the drag source
-    Vector2 localMousePosition = dragSource.WorldToLocal(evt.mousePosition);
-
-    // Calculate the new position of the drag source based on the offset
-    Vector2 newPosition = localMousePosition - offset;
-
-    // Update the position of the drag source
-    dragSource.style.left = newPosition.x;
-    dragSource.style.top = newPosition.y;
-
-    // Prevent event propagation and default behavior
-    evt.StopPropagation();
-    evt.PreventDefault();
-}
-
-private void OnMouseUp(MouseUpEvent evt)
-{
-    // Reset the offset and mark dragging as false
-    offset = Vector2.zero;
-    dragging = false;
-
-    // Prevent event propagation and default behavior
-    evt.StopPropagation();
-    evt.PreventDefault();
-}
+        // Prevent event propagation and default behavior
+        evt.StopPropagation();
+        evt.PreventDefault();
+    }
 }
